@@ -1,0 +1,15 @@
+<%= form_for(@product) do |form_builder_object| %>
+
+<%= form_builder_object.label :name %></br>
+<%= form_builder_object.text_field :name %></br>
+
+<%= form_builder_object.label :description %></br>
+<%= form_builder_object.text_field :description %></br>
+
+<%= form_builder_object.label :price_in_cents %></br>
+<%= form_builder_object.text_field :price_in_cents %></br>
+
+<%= form_builder_object.submit %>
+
+<%end%>
+
