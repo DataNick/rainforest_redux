@@ -1,5 +1,8 @@
 <h1>Products#index</h1>
+<%= link_to 'Welcome Page', root_path %>
 <p>Find me in app/views/products/index.html.erb</p>
 <h3>Products</h3>
-	<p><%= @product.name %>==>
-	<%= @product.formatted_price %></p>
+<% @products.each do |product| %>
+	<p><%= product.name %>:
+	<%= product.formatted_price %></p>
+<% end %>
