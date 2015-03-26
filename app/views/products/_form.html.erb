@@ -1,4 +1,5 @@
 <%= form_for(@product) do |form_builder_object| %>
+
 	<% if @product.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@product.errors.count, "error") %> prohibited this roduct from being saved:</h2>
@@ -10,8 +11,6 @@
 			</ul>
 		</div>
 	<%end%>
-
-
 
 <div class="field">
 <%= form_builder_object.label :name %><br />
