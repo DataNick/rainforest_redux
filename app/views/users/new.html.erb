@@ -1,0 +1,35 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |form_builder_object| %>
+
+	<% if @user.errors.any? %>
+		<div class = "error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class= "field">
+		<%= form_builder_object.label :email %><br/>
+		<%= form_builder_object.text_field :email %>
+	</div>
+
+	<div class= "field">
+		<%= form_builder_object.label :password %><br/>
+		<%= form_builder_object.text_field :password %>
+	</div>
+
+	<div class= "field">
+		<%= form_builder_object.label :password_confirmation %><br/>
+		<%= form_builder_object.text_field :password_confirmation %>
+	</div>
+
+	<div class="actions">
+		<%= form_builder_object.submit %>
+	</div>
+
+<% end %>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+
+
   root 'welcome#index'
   resources :products
+  resources :users, only: [:new, :create]
 
 
   # get 'products/index'
