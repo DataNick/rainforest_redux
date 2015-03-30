@@ -1,4 +1,4 @@
 <h1>Profile Page</h1>
 <%= link_to "Products Page", products_url %>
-<p>Name: <%= @user.email.gsub(/@example.com/, '').capitalize %></p>
+<p>Name: <%= @user.email.gsub(/\W\w*/, '').capitalize %></p>
 <p>Email: <%= @user.email %></p>
