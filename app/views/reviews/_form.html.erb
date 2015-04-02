@@ -1,5 +1,5 @@
-	<% if current_user %>
-	<h4>New Review</h4>
+<% if current_user %>
+<h4>New Review</h4>
 	<%= form_for ([@product, @review]) do |f| %>
 		<% if @review.errors.any? %>
 			<div id="error_explanation">
