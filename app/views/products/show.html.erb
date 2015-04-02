@@ -11,7 +11,7 @@
 			<%= review.comment %>
 			<br>
 			<% if review.user != nil %>
-				<em> by <%= review.user.email %></em>
+				<em> by <%= review.user.name %></em>
 				Added on: <%= review.created_at.strftime("%m/%d/%Y at %I:%M%p")  %>
 			<% end %>
 		</p>
