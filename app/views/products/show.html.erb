@@ -23,7 +23,7 @@
 
 	<%= render 'reviews/form' %>
 
-	<%= link_to "Delete", @product, method: :delete, data: {confirm: "Are you sure you want to delete this product?"} %>
+	<%= link_to "Delete Product #{@product.name}", @product, method: :delete, data: {confirm: "Are you sure you want to delete this product?"} %>
 	
 
 	
