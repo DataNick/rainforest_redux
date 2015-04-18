@@ -3,9 +3,11 @@
 <h3>Products</h3>
 	<p><%= @product.name %>:
 	<%= @product.formatted_price %></p>
+	<em><strong>Description</strong></em>
+	<p><%= @product.description %></p>
 
-<h3>Reviews</h3>
-	<p>Reviews for <%= @product.name %></p>
+
+	<h3>Reviews for <%= @product.name %></h3>
 	<% @product.reviews.order(created_at: :desc).each do |review| %>
 		<p>
 			<%= review.comment %>
