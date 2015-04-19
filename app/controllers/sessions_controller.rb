@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    #generating a form but no model and not writing to database; #new can be empty
   end
 
   def create

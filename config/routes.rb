@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :index]
   resources :sessions, only: [:new, :create, :destroy]
 
+  get 'login' => 'sessions#new', as: :login
 
   # get 'products/index'
 
