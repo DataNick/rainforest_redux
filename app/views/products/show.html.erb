@@ -2,7 +2,7 @@
 <%= link_to "All Products", products_url %>
 <h3>Products</h3>
 	<p><%= @product.name %>:
-	<%= @product.formatted_price %></p>
+	<%= format_price(@product.formatted_price) %></p>
 	<em><strong>Description</strong></em>
 	<p><%= @product.description %></p>
 
