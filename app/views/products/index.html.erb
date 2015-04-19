@@ -4,6 +4,12 @@
 <%= link_to 'Log In/New Session', "/sessions/new" %> |
 <%= link_to 'List of Users', users_path %>
 
+<%= form_tag products_path, method: :get do %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag 'Search' %>
+<% end %>
+
+
 <h3>Products</h3>
 <table>
 	<tr>
@@ -14,16 +20,16 @@
 		<th></th>
 		<th></th>
 </tr>
-<% @products.each do |product| %>
+	<% @products.each do |product| %>
 	<tr>
 		<td><%= link_to product.name, "/products/#{product.id}" %></td>
-		<td><%= product.description %></td>
+		<td><%= truncate(product.description, length: 100) %></td>
 		<td><%= format_price(product.formatted_price) %></td>
 		<td><%= link_to 'Show', product %></td>
 		<td><%= link_to 'Edit', edit_product_path(product) %></td>
 		<td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></td>
 	</tr>
-<% end %>
+<%end %>
 </table>
 
 <br />
