@@ -1,11 +1,16 @@
-<h1>Products#show</h1>
+<h1>Product: <%= @product.name %></h1>
 <%= link_to "All Products", products_url %>
-<h3>Products</h3>
-	<p><%= @product.name %>:
-	<%= format_price(@product.formatted_price) %></p>
-	<em><strong>Description</strong></em>
-	<p><%= @product.description %></p>
+<h3>Product Attributes</h3>
 
+	<p><strong>Name:</strong> <%= @product.name %></p>
+	<p><strong>Description:</strong> <%= @product.description %></p>
+	<p><strong>Price in cents:</strong> <%= format_price(@product.formatted_price) %></p>
+
+
+
+
+
+<%= link_to 'Edit Attributes', edit_product_path(@product) %>
 
 	<h3>Reviews for <%= @product.name %></h3>
 	<% @product.reviews.order(created_at: :desc).each do |review| %>
