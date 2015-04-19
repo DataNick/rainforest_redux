@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
   before_action :ensure_logged_in, except: [:index, :show]
   def index
-  	@products = Product.all
+    @products = if params[:search]
+      Product.where("name LIKE ?", "%#{params[:search]}%")
+    else
+  	  Product.all
+    end
   end
 
   def show
