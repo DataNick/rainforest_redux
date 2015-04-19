@@ -5,7 +5,25 @@
 <%= link_to 'List of Users', users_path %>
 <p>Find me in app/views/products/index.html.erb</p>
 <h3>Products</h3>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Price in cents</th>
+		<th></th>
+		<th></th>
+		<th></th>
+</tr>
 <% @products.each do |product| %>
-	<p><%= link_to product.name, "/products/#{product.id}" %>:
-	<%= product.formatted_price %></p>
+	<tr>
+		<td><%= link_to product.name, "/products/#{product.id}" %></td>
+		<td><%= product.description %></td>
+		<td><%= format_price(product.formatted_price) %></td>
+		<td><%= link_to 'Show', product %></td>
+		<td><%= link_to 'Edit', edit_product_path(product) %></td>
+		<td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+	</tr>
 <% end %>
+</table>
+
+<br />
