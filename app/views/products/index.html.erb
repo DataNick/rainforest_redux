@@ -1,4 +1,4 @@
-<h1>Product List (<%= Product.count %>)</h1>
+<h1>Product List</h1>
 <%= link_to 'Welcome Page', root_path %> |
 <%= link_to 'New Product', "/products/new" %> | 
 <%= link_to 'Log In/New Session', "/sessions/new" %> |
@@ -20,16 +20,9 @@
 		<th></th>
 		<th></th>
 </tr>
-	<% @products.each do |product| %>
-	<tr>
-		<td><%= link_to product.name, "/products/#{product.id}" %></td>
-		<td><%= truncate(product.description, length: 100) %></td>
-		<td><%= format_price(product.formatted_price) %></td>
-		<td><%= link_to 'Show', product %></td>
-		<td><%= link_to 'Edit', edit_product_path(product) %></td>
-		<td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-	</tr>
-<%end %>
+<div id="products">
+	<%= render @products %>
+</div>
 </table>
 
 <br />
