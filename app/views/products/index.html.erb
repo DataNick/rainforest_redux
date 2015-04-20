@@ -4,26 +4,15 @@
 <%= link_to 'Log In/New Session', "/sessions/new" %> |
 <%= link_to 'List of Users', users_path %>
 
-<%= form_tag products_path, method: :get do %>
+<%= form_tag products_path, method: :get, id: 'search_form' do %>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag 'Search' %>
 <% end %>
 
-
-<h3>Products</h3>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Description</th>
-		<th>Price in cents</th>
-		<th></th>
-		<th></th>
-		<th></th>
-</tr>
+<br />
 
 <div id="products">
 	<%= render @products %>
 </div>
-</table>
 
 <br />
