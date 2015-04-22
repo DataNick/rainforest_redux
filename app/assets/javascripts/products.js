@@ -19,7 +19,7 @@
 // 		var xhr = new XMLHttpRequest();
 // 		xhr.onload = display_search_results;
 // 		xhr.open('GET', '/products?search=' + searchValue, true);
-// 		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); // X-Requested-With, XMLHttpRequest
+// 		xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); // X-Requested-With=XMLHttpRequest
 // 		// is a special header that makes the method .xhr? available
 // 		xhr.send();
 // 	});
@@ -37,11 +37,16 @@ $(document).on('ready page:load', function() {
 		// }).done(function(data){
 		// 	$('#products').html(data);
 		// });
-		$.get('/products?search=' + searchValue)
-			.done(function(data){
-				console.log(data);
-				$('#products').html(data);
-			});
+	// ------------------------------------- //
+
+		// $.get('/products?search=' + searchValue)
+		// 	.done(function(data){
+		// 		console.log(data);
+		// 		$('#products').html(data);
+		// 	});
+
+	// ------------------------------------ //
+		$.getScript('/products?search=' + searchValue);
 	});
 });
 
