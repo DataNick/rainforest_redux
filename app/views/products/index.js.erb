@@ -1,2 +1,8 @@
-$('#products').html("<%= escape_javascript(render @products) %>");
+<% if params[:search] && params[:page].nil? %>
+	$('#products').html("<%= j render (@products) %>");
+<% else %>
+	$('#products').append("<%= escape_javascript(render @products) %>");
+<% end %>
+
+
 $('.pagination').replaceWith('<%= j paginate(@products) %>');
