@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
   before_action :ensure_logged_in, except: [:index, :show]
+  
   def index
     @products = if params[:search]
       Product.where("name LIKE ?", "%#{params[:search]}%")
     else
-  	  Product.all
+      Product.order('products.created_at DESC').page(params[:page])
     end
-
+    @products = @products.page(params[:page])
     # if request.xhr?
     #   render @products
     respond_to do |format|
