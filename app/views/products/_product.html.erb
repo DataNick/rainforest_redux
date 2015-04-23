@@ -6,6 +6,7 @@
 </h2>
 <% end %>
 	<%= truncate(product.description, length: 100) %>
+	<%= product.created_at %>
 <p><%= link_to 'Show', product %> |
 <%= link_to 'Edit', edit_product_path(product) %> |
 <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></p>
