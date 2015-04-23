@@ -1,1 +1,2 @@
 $('#products').html("<%= escape_javascript(render @products) %>");
+$('.pagination').replaceWith('<%= j paginate(@products) %>');

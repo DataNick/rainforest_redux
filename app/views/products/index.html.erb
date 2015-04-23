@@ -1,4 +1,6 @@
-<h1>Product List</h1>
+<h1>Products <small><%= page_entries_info @products %></small></h1>
+
+<hr/>
 <%= link_to 'Welcome Page', root_path %> |
 <%= link_to 'New Product', "/products/new" %> | 
 <%= link_to 'Log In/New Session', "/sessions/new" %> |
@@ -17,4 +19,5 @@
 
 <br />
 
+  <%= paginate @products %>
 
