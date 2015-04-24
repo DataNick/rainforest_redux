@@ -13,19 +13,9 @@
 <%= link_to 'Edit Attributes', edit_product_path(@product) %>
 
 	<h3>Reviews for <%= @product.name %></h3>
-	<% @product.reviews.order(created_at: :desc).each do |review| %>
-		<p>
-			<%= review.comment %>
-			<br />
-			<% if review.comment %>
-				<%=link_to "Delete comment",[@product, review], method: :delete %>
-			<% end %>
-			<% if review.user != nil %>
-				<em> by <%= review.user.name %></em>
-				Added on: <%= review.created_at.strftime("%m/%d/%Y at %I:%M%p")  %>
-			<% end %>
-		</p>
-	<% end %>
+	<div id = "review_list">
+		<%= render :partial => "reviews" %>
+	</div>
 
 
 	<%= render 'reviews/form' %>
