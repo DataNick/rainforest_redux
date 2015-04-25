@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
   	# else
   	# 	render 'products/show'
   	# end
-
+    sleep 1.5
     respond_to do |format|
       if @review.save
         format.html { redirect_to product_path(@product.id), notice: 'Review added.' }
