@@ -28,21 +28,21 @@
 	<%= link_to "Delete Product #{@product.name}", @product, method: :delete, data: {confirm: "Are you sure you want to delete this product?"} %>
 	
 
-<script type = "text/javascript">
-	$(function() {
-		$("#new_review")
-			.on('ajax:beforeSend', function() {
-				$("input[type = 'submit']")
-					.val('Saving...')
-					.attr('disabled', 'disabled');
-			})
-			.on('ajax:complete', function(){
-				$("input[type='submit']")
-					.val('Create Review')
-					.removeAttr('disabled');
-			});
-	});
-</script>
+	<script type = "text/javascript">
+		$(function() {
+			$("#new_review")
+				.on('ajax:beforeSend', function() {
+					$("input[type = submit]")
+						.val('Saving...')
+						.attr('disabled', true);
+				})
+				.on('ajax:complete', function(){
+					$("input[type=submit]")
+						.val('Create Review')
+						.removeAttr('disabled');
+				});
+		});
+	</script>
 	
 
 
