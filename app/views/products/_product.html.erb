@@ -1,12 +1,24 @@
 
-<%= link_to product_path(product.id) do %>
-<h2>
-	<%= product.name %>
-	<%= format_price(product.formatted_price) %>
-</h2>
-<% end %>
-	<%= truncate(product.description, length: 100) %>
-	<%= product.created_at %>
-<p><%= link_to 'Show', product %> |
-<%= link_to 'Edit', edit_product_path(product) %> |
-<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+<table class="table table-hover">
+  <thead>
+      <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Created at</th>
+      <th></th>
+      <th></th>
+    </tr>
+  <tbody>
+    <%= link_to product_path(product.id) do %>
+    <tr>
+<!-- <h2> -->
+        <td><%= link_to product.name, product %></td>
+        <td><%= format_price(product.formatted_price) %></td>
+<!-- </h2> -->
+        <td><%= truncate(product.description, length: 15) %></td>
+        <td><%= product.created_at %></td>
+        <td></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+    <% end %>
