@@ -7,22 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class = "container">
+
 	<% if flash[:notice] %>
-		<p id = "notice"><%= flash[:notice] %></p>
+    <%= content_tag :div, notice, class: "bg-success" %>
+		<!-- <p id = "notice"><%= flash[:notice] %></p> -->
 	<% end %>
 	<% if flash[:alert] %>
-		<p id = "alert"><%= flash[:alert] %></p>
+    <%= content_tag :div, alert, class: "bg-danger" %>
+		<!-- <p id = "alert"><%= flash[:alert] %></p> -->
 	<% end %>
 
-<%= yield %>
+  <%= yield %>
 
-	<p class = "userinfo">
-		<% if current_user %>
-			Signed in as <%= current_user.name %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
-		<% else %>
-			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
-		<% end %>
-		</p>
+<p class = "userinfo">
+	<% if current_user %>
+		Signed in as <%= current_user.name %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
+	<% else %>
+		<%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
+	<% end %>
+	</p>
+
+</div>
 
 </body>
 </html>
