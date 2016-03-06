@@ -20,7 +20,7 @@
   $card-border: 1px solid $card-border-color;
   $card-background: lighten($card-border-color, 10%);
   $card-header-background: $card-background;
-  $card-margin: 1em;
+  $card-margin: 1.5em;
   $card-image-hover-opacity: 0.7;
   $card-image-hover-color: #F8F2B4;
 
@@ -34,7 +34,6 @@
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
-
 
   .card-image {
     overflow: hidden;
@@ -59,7 +58,10 @@
     font-weight: bold;
     line-height: 1.5em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
+    font-size: 1.5rem;
+    line-height: 1.1;
   }
+
 
   .card-copy {
     font-size: 0.9em;
@@ -88,3 +90,4 @@
     }
   }
 }
+

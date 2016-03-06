@@ -2,14 +2,11 @@
 
 <hr/>
 <%= link_to 'Welcome Page', root_path %> |
-<%= link_to 'New Product', "/products/new" %> | 
+<%= link_to 'New Product', "/products/new" %> |
 <%= link_to 'Log In/New Session', "/sessions/new" %> |
 <%= link_to 'List of Users', users_path %>
 
-<%= form_tag products_path, method: :get, id: 'search_form' do %>
-	<%= text_field_tag :search, params[:search] %>
-	<%= submit_tag 'Search' %>
-<% end %>
+
 
 <br />
 

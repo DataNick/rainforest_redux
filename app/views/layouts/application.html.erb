@@ -9,6 +9,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">New Product</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Users</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Welcome</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">Login/Sign Up</a></li>
+      </ul>
+    </nav>
+    <div class="navigation-tools">
+    <%= form_tag products_path, method: :get, id: 'search_form' do %>
+      <div class="search-bar">
+      <%= text_field_tag :search, params[:search] %>
+        <form role="search">
+        <%= submit_tag 'Search' %>
+        </form>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</header>
 
 <div class = "container">
 
