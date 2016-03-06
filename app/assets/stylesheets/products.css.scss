@@ -6,7 +6,15 @@
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
+
+  @include media($tablet) {
+    @include span-columns(2 of 4);
+    @include omega(2n);
+  }
+
 }
+
+
 
 .card {
   $base-border-color: gainsboro !default;
@@ -34,6 +42,7 @@
   cursor: pointer;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
+
 
   .card-image {
     overflow: hidden;
@@ -89,5 +98,10 @@
       background-color: $card-background;
     }
   }
+
 }
+
+
+
+
 

@@ -14,23 +14,21 @@
     <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">New Product</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Users</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Welcome</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Login/Sign Up</a></li>
+        <li class="nav-link"><%= link_to 'Welcome Page', root_path %></li>
+        <li class="nav-link"><%= link_to "Products", products_url %></li>
+        <li class="nav-link"><%= link_to 'New Product', "/products/new" %></li>
+        <li class="nav-link"><%= link_to 'Users', users_path %></li>
+        <li class="nav-link"><%= link_to 'Log In/Sign Up', "/sessions/new" %></li>
       </ul>
     </nav>
-    <div class="navigation-tools">
-    <%= form_tag products_path, method: :get, id: 'search_form' do %>
-      <div class="search-bar">
-      <%= text_field_tag :search, params[:search] %>
-        <form role="search">
-        <%= submit_tag 'Search' %>
-        </form>
-      </div>
+      <div class="navigation-tools">
+      <%= form_tag products_path, method: :get do %>
+        <%= submit_tag 'Search', class: 'search-form' %>
+        <div class="search-bar">
+        <%= text_field_tag :search, params[:search] %>
+        </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </header>
 
