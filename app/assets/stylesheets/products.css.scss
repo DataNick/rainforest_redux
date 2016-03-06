@@ -7,6 +7,7 @@
   @include flex-wrap(wrap);
   @include justify-content(space-between);
 
+
   @include media($tablet) {
     @include span-columns(2 of 4);
     @include omega(2n);
