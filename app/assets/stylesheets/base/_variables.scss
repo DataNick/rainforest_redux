@@ -2,9 +2,17 @@
 $visual-grid: true;
 $visual-grid-color: lighten(red, 10%);
 
+//Google fonts
+@import url(https://fonts.googleapis.com/css?family=Cantarell);
+@import url(https://fonts.googleapis.com/css?family=Signika:400,600);
+
+//Font variables
+$cantarell: 'Cantarell', sans-serif;
+$signika: 'Signika', sans-serif;
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$base-font-family: $signika;
+$heading-font-family: $cantarell;
 
 // Font Sizes
 $base-font-size: 1em;

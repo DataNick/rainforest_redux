@@ -337,3 +337,7 @@ header.navigation {
     }
   }
 }
+
+.container {
+  @include outer-container(85%);
+}
