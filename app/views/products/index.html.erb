@@ -4,12 +4,12 @@
   <%= submit_tag 'Search'%>
 <% end %>
 <br />
+  <%= paginate @products %>
 
 <div id="products">
-	<%= render @products %>
+  <%= render @products %>
 </div>
 
 <br />
 
-  <%= paginate @products %>
 
