@@ -1,34 +1,34 @@
 <%= form_for(@product) do |form_builder_object| %>
 
-	<% if @product.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@product.errors.count, "error") %> prohibited this roduct from being saved:</h2>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this roduct from being saved:</h2>
 
-			<ul>
-			<% @product.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<%end%>
-			</ul>
-		</div>
-	<%end%>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <%end%>
+    </ul>
+    </div>
+  <%end%>
 
 <div class="field">
-<%= form_builder_object.label :name %><br />
-<%= form_builder_object.text_field :name %>
+  <%= form_builder_object.label :name %><br />
+  <%= form_builder_object.text_field :name %>
 </div>
 
 <div class="field">
-<%= form_builder_object.label :description %><br / >
-<%= form_builder_object.text_field :description %>
+  <%= form_builder_object.label :description %><br / >
+  <%= form_builder_object.text_field :description %>
 </div>
 
 <div class="field">
-<%= form_builder_object.label :price_in_cents %><br />
-<%= form_builder_object.text_field :price_in_cents %>
+  <%= form_builder_object.label :price_in_cents %><br />
+  <%= form_builder_object.text_field :price_in_cents %>
 </div>
 
 <div class="actions">
-<%= form_builder_object.submit %>
+  <%= form_builder_object.submit %>
 </div>
 <%end%>
 
