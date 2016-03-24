@@ -26,22 +26,23 @@
 
 <div class = "container">
 
-	<% if flash[:notice] %>
+  <% if flash[:notice] %>
     <%= content_tag :div, notice, class: "bg-success" %>
+  <% end %>
 
-	<% end %>
-	<% if flash[:alert] %>
+  <% if flash[:alert] %>
     <%= content_tag :div, alert, class: "bg-danger" %>
+  <% end %>
 
-	<% end %>
+  <p class = "userinfo">
 
-<p class = "userinfo">
-	<% if current_user %>
-		Signed in as <%= current_user.name %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
-	<% else %>
-		<%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
-	<% end %>
-	</p>
+  <% if current_user %>
+    Signed in as <%= current_user.name %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
+  <% else %>
+    <%= link_to "Log in", new_session_path %> or <%= link_to "Sign Up", new_user_path %>
+  <% end %>
+
+  </p>
 
   <%= yield %>
 
