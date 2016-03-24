@@ -14,18 +14,13 @@
   <%= render :partial => "/products/review_form_errors" %>
 </div>
 
+<h3>Reviews for <%= @product.name %></h3>
+<div id = "review_list">
+	<%= render :partial => "reviews" %>
+</div>
 
 
-
-
-
-	<h3>Reviews for <%= @product.name %></h3>
-	<div id = "review_list">
-		<%= render :partial => "reviews" %>
-	</div>
-
-
-	<%= render 'reviews/form' %>
+<%= render 'reviews/form' %>
 
 
 
