@@ -1,17 +1,21 @@
 <% @product.reviews.order(created_at: :desc).each do |review| %>
-<div class = "review">
-	<p class = "comment">
-		<%= review.comment %>
+	<div class = "review">
+		<p class = "comment">
+
+			<%= review.comment %>
 		<br />
+
 		<% if review.comment %>
 			<%=link_to "Delete comment",[@product, review], method: :delete %>
 		<% end %>
+
 		<div class = "poster">
 		<% if review.user != nil %>
 			<em> by <%= review.user.name %></em>
 			Added on: <%= review.created_at.strftime("%m/%d/%Y at %I:%M%p")  %>
 		<% end %>
 		</div>
-	</p>
+
+		</p>
 	</div>
 <% end %>
