@@ -8,12 +8,7 @@ class ReviewsController < ApplicationController
   def create
   	@review = @product.reviews.build(review_params)
   	@review.user = current_user
-  	# if @review.save
-  	# 	redirect_to products_path, notice: 'Review created successfully'
-  	# else
-  	# 	render 'products/show'
-  	# end
-    
+
     respond_to do |format|
       if @review.save
         format.html { redirect_to product_path(@product.id), notice: 'Review added.' }
@@ -33,7 +28,7 @@ class ReviewsController < ApplicationController
 
   def edit
   end
-  
+
 
   private
 

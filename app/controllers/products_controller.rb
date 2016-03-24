@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :ensure_logged_in, except: [:index, :show]
-  
+
   def index
     @products = if params[:search]
       Product.where("name LIKE ?", "%#{params[:search]}%")
@@ -8,8 +8,7 @@ class ProductsController < ApplicationController
       Product.order('products.created_at DESC').page(params[:page])
     end
     @products = @products.page(params[:page])
-    # if request.xhr?
-    #   render @products
+
     respond_to do |format|
       format.html
       format.js
@@ -34,7 +33,7 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(product_params)
-  	
+
   	if @product.save
   		redirect_to products_url
   	else
