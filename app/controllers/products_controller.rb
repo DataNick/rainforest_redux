@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     else
       Product.order('products.created_at DESC').page(params[:page])
     end
+
     @products = @products.page(params[:page])
 
     respond_to do |format|
@@ -16,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-  	@product = Product.find(params[:id])
+    @product = Product.find(params[:id])
 
     if current_user
       @review = @product.reviews.build
@@ -24,43 +25,41 @@ class ProductsController < ApplicationController
   end
 
   def new
-  	@product = Product.new
+    @product = Product.new
   end
 
   def edit
-  	@product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def create
-  	@product = Product.new(product_params)
+    @product = Product.new(product_params)
 
-  	if @product.save
-  		redirect_to products_url
-  	else
-  		render :new
-  	end
-
+    if @product.save
+      redirect_to products_url
+    else
+      render :new
+    end
   end
 
   def update
-  	@product = Product.find(params[:id])
+    @product = Product.find(params[:id])
 
-  	if @product.update_attributes(product_params)
-  		redirect_to product_path(@product)
-  	else
-  		render :edit
-  	end
-
+    if @product.update_attributes(product_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy
-  	@product = Product.find(params[:id])
-  	@product.destroy
-  	redirect_to product_path
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to product_path
   end
 
   private
   def product_params
-  	params.require(:product).permit(:name, :description, :price_in_cents)
+    params.require(:product).permit(:name, :description, :price_in_cents)
   end
 end

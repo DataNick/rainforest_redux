@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
-	before_filter :load_product
+  before_filter :load_product
   before_filter :ensure_logged_in, only: [:create, :destroy]
+
   def show
-  	@review = Review.find(params[:id])
+    @review = Review.find(params[:id])
   end
 
   def create
-  	@review = @product.reviews.build(review_params)
-  	@review.user = current_user
+    @review = @product.reviews.build(review_params)
+    @review.user = current_user
 
     respond_to do |format|
       if @review.save
@@ -21,8 +22,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-  	@review = Review.find(params[:id])
-  	@review.destroy
+    @review = Review.find(params[:id])
+    @review.destroy
     redirect_to products_path, notice: 'Review was deleted'
   end
 
@@ -33,10 +34,10 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-  	params.require(:review).permit(:comment, :product_id)
+    params.require(:review).permit(:comment, :product_id)
   end
 
   def load_product
-  	@product =Product.find(params[:product_id])
+    @product =Product.find(params[:product_id])
   end
 end
