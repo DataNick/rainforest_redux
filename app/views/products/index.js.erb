@@ -1,7 +1,7 @@
 <% if params[:search] && params[:page].nil? %>
-	$('#products').html("<%= j render (@products) %>");
+  $('#products').html("<%= j render (@products) %>");
 <% else %>
-	$('#products').append("<%= escape_javascript(render @products) %>");
+  $('#products').append("<%= escape_javascript(render @products) %>");
 <% end %>
 
 
