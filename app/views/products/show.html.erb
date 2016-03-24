@@ -1,6 +1,8 @@
 <h1>Product: <%= @product.name %></h1>
+
 <%= link_to "Delete Product #{@product.name}", @product, method: :delete, data: {confirm: "Are you sure you want to delete this product?"} %> |
 <%= link_to 'Edit Attributes', edit_product_path(@product) %>
+
 <h2>Product Attributes</h2>
 
 	<p><strong>Name:</strong> <%= @product.name %></p>
