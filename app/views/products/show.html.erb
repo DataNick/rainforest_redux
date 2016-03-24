@@ -5,13 +5,13 @@
 
 <h2>Product Attributes</h2>
 
-	<p><strong>Name:</strong> <%= @product.name %></p>
-	<p><strong>Description:</strong> <%= @product.description %></p>
-	<p><strong>Price in cents:</strong> <%= format_price(@product.formatted_price) %></p>
+<p><strong>Name:</strong> <%= @product.name %></p>
+<p><strong>Description:</strong> <%= @product.description %></p>
+<p><strong>Price in cents:</strong> <%= format_price(@product.formatted_price) %></p>
 
 
 <div id = "review_form_errors">
-	<%= render :partial => "/products/review_form_errors" %>
+  <%= render :partial => "/products/review_form_errors" %>
 </div>
 
 
@@ -29,21 +29,21 @@
 
 
 
-	<script type = "text/javascript">
-		$(function() {
-			$("#new_review")
-				.on('ajax:beforeSend', function() {
-					$("input[type = submit]")
-						.val('Saving...')
-						.attr('disabled', true);
-				})
-				.on('ajax:complete', function(){
-					$("input[type=submit]")
-						.val('Create Review')
-						.removeAttr('disabled');
-				});
-		});
-	</script>
+  <script type = "text/javascript">
+    $(function() {
+      $("#new_review")
+        .on('ajax:beforeSend', function() {
+          $("input[type = submit]")
+            .val('Saving...')
+            .attr('disabled', true);
+        })
+        .on('ajax:complete', function(){
+          $("input[type=submit]")
+            .val('Create Review')
+            .removeAttr('disabled');
+        });
+    });
+  </script>
 
 
 
